@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
-import { getUsers } from "../services/userService";
+import { useState } from "react";
+// import { getUsers } from "../services/userService";
 import type { User } from "../types";
 
 export function useUsers() {
-  const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [users] = useState<User[]>([{
+  id: 1,
+  name: 'Khalid',
+  email: 'khalid.saeed@eremnews.com'
+}]);
+  /* const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -18,11 +22,11 @@ export function useUsers() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, []);*/
 
   return {
     users,
-    loading,
-    error,
+    // loading,
+    // error,
   };
 }

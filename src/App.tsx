@@ -1,4 +1,4 @@
-import { useAppContext } from "./app/providers/app/AppProvider"
+import { useAppContext } from "./app/Providers/app/AppProvider"
 import UsersPage from "./pages/UsersPage"
 
 function App() {

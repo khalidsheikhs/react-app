@@ -1,33 +1,18 @@
-import { createContext, useContext, useReducer } from "react" // useState
-import type { AppState } from './types'
-import appReducer from './appReducer'
+import { createContext, useContext, useState } from "react"
+
+type AppState = {
+  appName: string
+}
 
 const AppContext = createContext<AppState | undefined>(undefined)
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  // const [appName, setAppName] = useState("My Dashboard")
-
-  /* const value = {
-    appName,
-    setAppName,
-  } */
-
-  /** Use Reducer Example **/
-  const [state, dispatch] = useReducer(appReducer, {
-    appName: "My Dashboard",
-    setAppName: (String) => String
-  })
-  /** Use Reducer Example **/
+  const [appName, setAppName] = useState("My Dashboard")
 
   const value = {
-    appName: state.appName,
-    setAppName: (name: string) =>
-      dispatch({
-        type: "SET_APP_NAME",
-        payload: name,
-      }),
+    appName,
+    setAppName,
   }
-  /** Use Reducer Example **/
 
   return (
     <AppContext.Provider value={value}>
