@@ -1,12 +1,12 @@
 import {
   useAppDispatch,
   useAppSelector,
-} from "../../app/store/hooks"
+} from "@/app/store/hooks"
 
 import {
   toggleSidebar,
   closeMobileSidebar,
-} from "../../app/store/slices/sidebar"
+} from "@/app/store/slices/sidebar"
 
 function Sidebar() {
   const dispatch = useAppDispatch()

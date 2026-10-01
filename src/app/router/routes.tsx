@@ -1,16 +1,16 @@
 import { Navigate } from "react-router-dom"
 
-import AdminLayout from "../../layouts/AdminLayout"
-import AuthLayout from "../../layouts/AuthLayout"
+import AdminLayout from "@/layouts/AdminLayout"
+import AuthLayout from "@/layouts/AuthLayout"
 
-import LoginPage from "../../pages/auth/LoginPage"
-import RegisterPage from "../../pages/auth/RegisterPage"
-import ForgotPasswordPage from "../../pages/auth/ForgotPasswordPage"
+import LoginPage from "@/pages/auth/LoginPage"
+import RegisterPage from "@/pages/auth/RegisterPage"
+import ForgotPasswordPage from "@/pages/auth/ForgotPasswordPage"
 
 import ProtectedRoute from "./ProtectedRoute"
-import DashboardPage from "../../pages/DashboardPage"
-import UsersPage from "../../pages/UsersPage"
-import CategoriesPage from "../../pages/CategoriesPage"
+import DashboardPage from "@/pages/DashboardPage"
+import UsersPage from "@/pages/UsersPage"
+import CategoriesPage from "@/pages/CategoriesPage"
 
 export const routes = [
   // Public routes

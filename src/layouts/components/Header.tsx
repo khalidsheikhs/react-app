@@ -1,5 +1,5 @@
-import { useAppDispatch } from "../../app/store/hooks"
-import { openMobileSidebar } from "../../app/store/slices/sidebar"
+import { useAppDispatch } from "@/app/store/hooks"
+import { openMobileSidebar } from "@/app/store/slices/sidebar"
 
 function Header() {
   const dispatch = useAppDispatch();

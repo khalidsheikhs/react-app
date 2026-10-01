@@ -1,5 +1,5 @@
 import type { User } from "../types"
-import Button from "../../../components/ui/Button"
+import Button from "@/components/ui/Button"
 // import { useState } from "react"
 
 type UserListProps = {

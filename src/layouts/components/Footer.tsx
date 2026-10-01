@@ -1,8 +1,8 @@
 function Footer() {
   return (
-    <>
-      <h2>Footer UI</h2>
-    </>
+    <footer className="py-4 text-center text-xs text-gray-400">
+      Created by Khalid Saeed
+    </footer>
   )
 }
 
