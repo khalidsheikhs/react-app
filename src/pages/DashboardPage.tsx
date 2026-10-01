@@ -56,10 +56,10 @@ export default function Dashboard() {
     <>
       <h2 className="mb-6 text-2xl font-semibold">Dashboard</h2>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 min-w-0">
 
         {/* User Growth */}
-        <div className="rounded-lg border bg-white p-5">
+        <div className="rounded-lg border bg-white p-5 min-w-0">
           <h3 className="text-lg font-semibold">User Growth</h3>
           <p className="mb-5 text-sm text-gray-500">
             Total registered users
@@ -83,7 +83,7 @@ export default function Dashboard() {
         </div>
 
         {/* Posts Published */}
-        <div className="rounded-lg border bg-white p-5">
+        <div className="rounded-lg border bg-white p-5 min-w-0">
           <h3 className="text-lg font-semibold">Posts Published</h3>
           <p className="mb-5 text-sm text-gray-500">
             Monthly published posts
@@ -106,7 +106,7 @@ export default function Dashboard() {
         </div>
 
         {/* Traffic Sources */}
-        <div className="rounded-lg border bg-white p-5">
+        <div className="rounded-lg border bg-white p-5 min-w-0">
           <h3 className="text-lg font-semibold">Traffic Sources</h3>
           <p className="mb-5 text-sm text-gray-500">
             Where your visitors come from
@@ -137,7 +137,7 @@ export default function Dashboard() {
         </div>
 
         {/* Page Views */}
-        <div className="rounded-lg border bg-white p-5">
+        <div className="rounded-lg border bg-white p-5 min-w-0">
           <h3 className="text-lg font-semibold">Page Views</h3>
           <p className="mb-5 text-sm text-gray-500">
             Monthly website page views

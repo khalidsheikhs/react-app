@@ -26,10 +26,6 @@ function Sidebar() {
       <div className="flex h-full flex-col">
         {/* Sidebar header */}
         <div className="flex h-16 items-center justify-between border-b border-gray-200 px-4">
-          <h2 className="text-xl font-bold text-gray-800">
-            Side UI
-          </h2>
-
           {/* Mobile close button */}
           <button
             type="button"
@@ -39,6 +35,10 @@ function Sidebar() {
           >
             ✕
           </button>
+
+          {/*  <h2 className="text-xl font-bold text-gray-800">
+            Side UI
+          </h2>  */}
         </div>
 
         {/* Desktop collapse button */}
