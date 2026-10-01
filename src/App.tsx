@@ -1,18 +1,8 @@
-import { useAppContext } from "./app/Providers/app/AppProvider"
-import UsersPage from "./pages/UsersPage"
+import AppRouter from "./app/router/AppRouter";
 
 function App() {
-  const { appName, setAppName } = useAppContext()
   return (
-    <div>
-      {appName && (
-        <h1>{appName}</h1>
-      )}
-      <button onClick={() => setAppName("Admin Dashboard")}>
-        Change App Name
-      </button>
-      <UsersPage />
-    </div>
+     <AppRouter />
   )
 }
 
