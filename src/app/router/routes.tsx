@@ -1,16 +1,9 @@
 import { Navigate } from "react-router-dom"
+import { lazyRoute } from "./routerHelpers"
 
 import AdminLayout from "../../layouts/AdminLayout"
 import AuthLayout from "../../layouts/AuthLayout"
-
-import LoginPage from "../../pages/auth/LoginPage"
-import RegisterPage from "../../pages/auth/RegisterPage"
-import ForgotPasswordPage from "../../pages/auth/ForgotPasswordPage"
-
 import ProtectedRoute from "./ProtectedRoute"
-import DashboardPage from "../../pages/DashboardPage"
-import UsersPage from "../../pages/UsersPage"
-import CategoriesPage from "../../pages/CategoriesPage"
 
 export const routes = [
   // Public routes
@@ -19,15 +12,15 @@ export const routes = [
     children: [
       {
         path: "/login",
-        element: <LoginPage />,
+        lazy: lazyRoute(() => import("../../pages/auth/LoginPage")),
       },
       {
         path: "/register",
-        element: <RegisterPage />,
+        lazy: lazyRoute(() => import("../../pages/auth/RegisterPage")),
       },
       {
         path: "/forgot-password",
-        element: <ForgotPasswordPage />,
+        lazy: lazyRoute(() => import("../../pages/auth/ForgotPasswordPage")),
       },
     ],
   },
@@ -40,23 +33,25 @@ export const routes = [
         element: <AdminLayout />,
         children: [
           {
-            path: "/",
-            element: <Navigate to="/dashboard" replace />,
-          },
-          {
             path: "/dashboard",
-            element: <DashboardPage />,
+            lazy: lazyRoute(() => import("../../pages/DashboardPage")),
           },
           {
             path: "/users",
-            element: <UsersPage />,
+            lazy: lazyRoute(() => import("../../pages/UsersPage")),
           },
           {
             path: "/categories",
-            element: <CategoriesPage />,
+            lazy: lazyRoute(() => import("../../pages/CategoriesPage")),
           },
         ],
       },
     ],
+  },
+
+  // Default route
+  {
+    path: "/",
+    element: <Navigate to="/dashboard" replace />,
   },
 ];
