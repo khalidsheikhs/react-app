@@ -5,22 +5,19 @@ import Footer from "./components/Footer"
 
 function AdminLayout() {
   return (
-    <>
-      <h1>
-        Admin Layout
-      </h1>
+    <div className="flex min-h-screen bg-gray-100">
       <Sidebar />
 
-      <div>
+      <div className="flex min-h-screen min-w-0 flex-1 flex-col">
         <Header />
 
-        <main>
+        <main className="flex-1 min-w-0">
           <Outlet />
         </main>
 
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

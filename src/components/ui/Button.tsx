@@ -5,7 +5,7 @@ type ButtonProps = {
 
 function Button({ children, onClick }: ButtonProps) {
   return (
-    <button onClick={onClick}>
+    <button className="bg-primary text-white px-4 py-2 rounded-lg" onClick={onClick}>
       {children}
     </button>
   )

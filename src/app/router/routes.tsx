@@ -1,15 +1,16 @@
-import { Navigate } from "react-router-dom";
-import AdminLayout from "../../layouts/AdminLayout";
-import AuthLayout from "../../layouts/AuthLayout";
+import { Navigate } from "react-router-dom"
 
-import LoginPage from "../../pages/auth/LoginPage";
-import RegisterPage from "../../pages/auth/RegisterPage";
+import AdminLayout from "../../layouts/AdminLayout"
+import AuthLayout from "../../layouts/AuthLayout"
 
-import DashboardPage from "../../pages/DashboardPage";
-import UsersPage from "../../pages/UsersPage";
-import CategoriesPage from "../../pages/CategoriesPage";
+import LoginPage from "../../pages/auth/LoginPage"
+import RegisterPage from "../../pages/auth/RegisterPage"
+import ForgotPasswordPage from "../../pages/auth/ForgotPasswordPage"
 
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute"
+import DashboardPage from "../../pages/DashboardPage"
+import UsersPage from "../../pages/UsersPage"
+import CategoriesPage from "../../pages/CategoriesPage"
 
 export const routes = [
   // Public routes
@@ -23,6 +24,10 @@ export const routes = [
       {
         path: "/register",
         element: <RegisterPage />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPasswordPage />,
       },
     ],
   },

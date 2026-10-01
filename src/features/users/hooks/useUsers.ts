@@ -1,6 +1,6 @@
-import { useState } from "react";
-// import { getUsers } from "../services/userService";
-import type { User } from "../types";
+import { useState } from "react"
+// import { getUsers } from "../services/userService"
+import type { User } from "../types"
 
 export function useUsers() {
   const [users] = useState<User[]>([{
