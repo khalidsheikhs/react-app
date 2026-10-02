@@ -7,7 +7,7 @@ export function useUsers() {
   id: 1,
   name: 'Khalid',
   email: 'khalid.saeed@eremnews.com'
-}]);
+}])
   /* const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -28,5 +28,5 @@ export function useUsers() {
     users,
     // loading,
     // error,
-  };
+  }
 }

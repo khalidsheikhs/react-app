@@ -12,7 +12,7 @@ function Sidebar() {
   const dispatch = useAppDispatch()
   const { sidebarCollapsed, mobileSidebarOpen } = useAppSelector(
     (state) => state.sidebar
-  );
+  )
 
   return (
     <aside

@@ -18,7 +18,7 @@ function AdminLayout() {
         <Footer />
       </div>
     </div>
-  );
+  )
 }
 
-export default AdminLayout;
+export default AdminLayout

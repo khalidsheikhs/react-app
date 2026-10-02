@@ -72,7 +72,7 @@ function AuthLayout() {
         </section>
       </div>
     </div>
-  );
+  )
 }
 
-export default AuthLayout;
+export default AuthLayout

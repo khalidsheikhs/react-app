@@ -7,5 +7,5 @@ export async function getUsers(): Promise<User[]> {
     throw new Error("Failed to fetch users");
   }
 
-  return response.json();
+  return response.json()
 }
