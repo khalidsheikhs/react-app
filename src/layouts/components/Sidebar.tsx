@@ -1,3 +1,6 @@
+import MenuItem from "@/components/ui/MenuItem"
+import { SIDEBAR_ITEMS } from "@/config/navigation"
+
 import {
   useAppDispatch,
   useAppSelector,
@@ -10,6 +13,7 @@ import {
 
 function Sidebar() {
   const dispatch = useAppDispatch()
+
   const { sidebarCollapsed, mobileSidebarOpen } = useAppSelector(
     (state) => state.sidebar
   )
@@ -24,32 +28,41 @@ function Sidebar() {
       `}
     >
       <div className="flex h-full flex-col">
-        {/* Sidebar header */}
-        <div className="flex h-16 items-center justify-between border-b border-gray-200 px-4">
-          {/* Mobile close button */}
+
+        {/* Header */}
+        <div className="flex h-16 items-center justify-between border-b px-4">
           <button
             type="button"
             className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 md:hidden"
             onClick={() => dispatch(closeMobileSidebar())}
-            aria-label="Close sidebar"
           >
             ✕
           </button>
-
-          {/*  <h2 className="text-xl font-bold text-gray-800">
-            Side UI
-          </h2>  */}
         </div>
 
-        {/* Desktop collapse button */}
-        <div className="p-4">
+        {/* Menu */}
+        <nav className="flex-1 overflow-y-auto p-2">
+          {SIDEBAR_ITEMS.map((menu) => (
+            <MenuItem
+              key={menu.item}
+              {...menu}
+              collapsed={sidebarCollapsed}
+              onNavigate={() => dispatch(closeMobileSidebar())}
+            />
+          ))}
+        </nav>
+
+        {/* Collapse */}
+        <div className="border-t p-4">
           <button
-            className="w-full rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            type="button"
+            className="w-full rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white"
             onClick={() => dispatch(toggleSidebar())}
           >
-            Toggle Sidebar
+            {sidebarCollapsed ? "→" : "Collapse"}
           </button>
         </div>
+
       </div>
     </aside>
   )
