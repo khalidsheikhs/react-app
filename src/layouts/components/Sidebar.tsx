@@ -41,7 +41,7 @@ function Sidebar() {
         </div>
 
         {/* Menu */}
-        <nav className="flex-1 overflow-y-auto p-2">
+        <nav className="flex-1 p-2">
           {SIDEBAR_ITEMS.map((menu) => (
             <MenuItem
               key={menu.item}
