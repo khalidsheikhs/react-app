@@ -52,7 +52,7 @@ function LoginPage() {
     }
   }
 
-  const handleGoogleLogin = (event: React.SubmitEvent<HTMLFormElement>) => {
+  const handleGoogleLogin = (event: React.MouseEvent<HTMLButtonElement>) => {
     console.log(event)
   }
 

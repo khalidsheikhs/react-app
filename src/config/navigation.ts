@@ -5,8 +5,6 @@ import {
   FileText,
   Image,
   Folder,
-  Tags,
-  Layers,
   Users,
   Settings,
 } from "lucide-react"
