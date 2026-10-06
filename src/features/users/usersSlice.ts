@@ -4,6 +4,7 @@ import { getUsers } from "./services/userService"
 
 const initialState: UsersState = {
   users: [],
+  selectedUser: null,
   status: "idle",
   error: null,
 }
@@ -18,7 +19,11 @@ export const fetchUsers = createAsyncThunk(
 const usersSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
+  reducers: {
+    selectUser(state, action) {
+      state.selectedUser = action.payload
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUsers.pending, (state) => {
@@ -36,4 +41,5 @@ const usersSlice = createSlice({
   },
 })
 
+export const { selectUser } = usersSlice.actions
 export default usersSlice.reducer

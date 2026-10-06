@@ -1,15 +1,22 @@
-import type { User } from "../types"
 import Button from "@/components/ui/Button"
-// import { useState } from "react"
+import { useAppDispatch } from "@/app/store/hooks"
+import { selectUser } from "./../usersSlice"
+import useUsers from "./../hooks/useUsers"
+import useSelectedUser from "./../hooks/useSelectedUser"
 
-type UserListProps = {
-  users: User[]
-  selectedUserId?: number | null
-  onSelectUser?: (id: number) => void
-}
+function UserList() {
+  const dispatch = useAppDispatch()
+  const { users, loading, error } = useUsers()
+  const { selectedUser } = useSelectedUser()
 
-function UserList({ users, selectedUserId, onSelectUser}: UserListProps) {
-  // const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
+  if (loading) {
+    return <p>Loading users...</p>
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>
+  }
+
   return (
     <table width="100%">
       <thead>
@@ -21,11 +28,11 @@ function UserList({ users, selectedUserId, onSelectUser}: UserListProps) {
       </thead>
       <tbody>
           {users.map((user) => (
-          <tr key={user.id} className={user.id === selectedUserId ? 'active' : '' }>
+          <tr key={user.id} className={user.id === selectedUser ? 'active' : '' }>
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>
-              <Button onClick={() => onSelectUser(user.id)}>
+              <Button onClick={() => dispatch(selectUser(user.id))}>
                 View User
               </Button>
             </td>

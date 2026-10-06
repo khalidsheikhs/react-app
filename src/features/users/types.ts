@@ -6,6 +6,7 @@ export type User = {
 
 export type UsersState = {
   users: User[]
+  selectedUser: number | null
   status: "idle" | "loading" | "succeeded" | "failed"
   error: string | null
 }

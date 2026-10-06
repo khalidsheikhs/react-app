@@ -1,8 +1,11 @@
-function SelectedUser({ selectedUserId }: {selectedUserId: number | null}) {
+import useSelectedUser from "./../hooks/useSelectedUser"
+
+function SelectedUser() {
+  const { selectedUser } = useSelectedUser()
   return (
     <>
-      {selectedUserId && (
-        <p>Selected user ID: {selectedUserId}</p>
+      {selectedUser && (
+        <p>Selected user ID: {selectedUser}</p>
       )}
     </>
   )
