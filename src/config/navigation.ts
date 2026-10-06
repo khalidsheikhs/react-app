@@ -1,20 +1,26 @@
-export type MenuItem = {
-  item: string
-  path: string
-  children?: {
-    item: string
-    path: string
-  }[]
-}
+import type { MenuItem } from "@/types/navigation"
+
+import {
+  LayoutDashboard,
+  FileText,
+  Image,
+  Folder,
+  Tags,
+  Layers,
+  Users,
+  Settings,
+} from "lucide-react"
 
 export const SIDEBAR_ITEMS: MenuItem[] = [
   {
     item: "Dashboard",
     path: "/dashboard",
+    icon: LayoutDashboard,
   },
   {
     item: "Content",
-    path: "#",
+    path: "/posts",
+    icon: FileText,
     children: [
       { item: "Posts", path: "/content/posts" },
       { item: "Add Post", path: "/content/add" },
@@ -25,10 +31,12 @@ export const SIDEBAR_ITEMS: MenuItem[] = [
   {
     item: "Sections",
     path: "/sections",
+    icon: Folder,
   },
   {
     item: "Media",
-    path: "#",
+    path: "/media",
+    icon: Image,
     children: [
       { item: "Library", path: "/media/library" },
       { item: "Add Media", path: "/media/add" },
@@ -36,7 +44,8 @@ export const SIDEBAR_ITEMS: MenuItem[] = [
   },
   {
     item: "Pages",
-    path: "#",
+    path: "/pages",
+    icon: FileText,
     children: [
       { item: "All", path: "/pages" },
       { item: "Add", path: "/pages/add" },
@@ -44,7 +53,8 @@ export const SIDEBAR_ITEMS: MenuItem[] = [
   },
   {
     item: "Users",
-    path: "#",
+    path: "/users",
+    icon: Users,
     children: [
       { item: "All", path: "/users" },
       { item: "Add", path: "/users/add" },
@@ -53,7 +63,8 @@ export const SIDEBAR_ITEMS: MenuItem[] = [
   },
   {
     item: "Settings",
-    path: "#",
+    path: "/settings",
+    icon: Settings,
     children: [
       { item: "General", path: "/settings/general" },
       { item: "Writing", path: "/settings/writing" },

@@ -1,0 +1,14 @@
+Application Architecture 
+
+src/
+│ 
+├── app/ → Application configuration 
+├── components/ → Reusable UI components 
+├── features/ → Business/domain features 
+├── layouts/ → Page layouts 
+├── pages/ → Route-level pages 
+├── services/ → API/external services 
+├── hooks/ → Global/custom hooks 
+├── lib/ → Utilities/configuration 
+├── types/ → Shared TypeScript types 
+└── assets/ → Global styles/assets

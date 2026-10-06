@@ -1,21 +1,18 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
-
-type MenuItemProps = {
-  item: string
-  path: string
-  children?: { item: string; path: string }[]
-  collapsed?: boolean
-  onNavigate?: () => void
-}
+import type { MenuItem as Item } from "@/types/navigation"
 
 function MenuItem({
   item,
   path,
+  icon: Icon,
   children,
   collapsed = false,
   onNavigate,
-}: MenuItemProps) {
+}: Item & {
+  collapsed?: boolean
+  onNavigate?: () => void
+}) {
   const [isOpen, setIsOpen] = useState(false)
 
   const hasChildren = Boolean(children?.length)
@@ -37,7 +34,8 @@ function MenuItem({
           `
         }
       >
-        {item}
+        <Icon size={20} />
+        {!collapsed && <span>{item}</span>}
       </NavLink>
     )
   }
@@ -54,7 +52,8 @@ function MenuItem({
           hover:bg-gray-100
         "
       >
-        <span>{item}</span>
+        <Icon size={20} />
+        {!collapsed && <span>{item}</span>}
 
         {!collapsed && (
           <span
