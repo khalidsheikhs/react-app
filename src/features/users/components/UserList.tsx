@@ -4,8 +4,8 @@ import Button from "@/components/ui/Button"
 
 type UserListProps = {
   users: User[]
-  selectedUserId: number | null
-  onSelectUser: (id: number) => void
+  selectedUserId?: number | null
+  onSelectUser?: (id: number) => void
 }
 
 function UserList({ users, selectedUserId, onSelectUser}: UserListProps) {
@@ -14,9 +14,9 @@ function UserList({ users, selectedUserId, onSelectUser}: UserListProps) {
     <table width="100%">
       <thead>
         <tr>
-          <th>User Name</th>
-          <th>User Email</th>
-          <th>Action</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

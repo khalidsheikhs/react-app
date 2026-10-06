@@ -1,32 +1,23 @@
-import { useState } from "react"
-// import { getUsers } from "../services/userService"
-import type { User } from "../types"
+import { useEffect } from "react"
+import { useAppSelector, useAppDispatch } from "@/app/store/hooks"
+import { fetchUsers } from "../usersSlice"
 
 export function useUsers() {
-  const [users] = useState<User[]>([{
-  id: 1,
-  name: 'Khalid',
-  email: 'khalid.saeed@eremnews.com'
-}])
-  /* const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const dispatch = useAppDispatch()
+
+  const { users, status, error } = useAppSelector(
+    (state) => state.users
+  )
 
   useEffect(() => {
-    getUsers()
-      .then((data) => {
-        setUsers(data);
-      })
-      .catch((error) => {
-        setError(error instanceof Error ? error.message : "Something went wrong");
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);*/
+    if (status === "idle") {
+      dispatch(fetchUsers())
+    }
+  }, [dispatch, status])
 
   return {
     users,
-    // loading,
-    // error,
+    loading: status === "loading",
+    error,
   }
 }
