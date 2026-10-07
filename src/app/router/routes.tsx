@@ -1,4 +1,5 @@
 import { Navigate } from "react-router-dom"
+import type { RouteObject } from "react-router-dom"
 
 import AdminLayout from "@/layouts/AdminLayout"
 import AuthLayout from "@/layouts/AuthLayout"
@@ -12,7 +13,7 @@ import DashboardPage from "@/pages/DashboardPage"
 import UsersPage from "@/pages/UsersPage"
 import CategoriesPage from "@/pages/CategoriesPage"
 
-export const routes = [
+const routes: RouteObject[] = [
   // Public routes
   {
     element: <AuthLayout />,
@@ -60,3 +61,5 @@ export const routes = [
     ],
   },
 ]
+
+export default routes
