@@ -12,3 +12,9 @@ src/
 ├── lib/ → Utilities/configuration 
 ├── types/ → Shared TypeScript types 
 └── assets/ → Global styles/assets
+
+
+Only for experimental purpose
+sidebar expand/collaspe state manage by redux store
+features -> users -> handle state by redux thunk
+features -> categories -> handle state by tanstack query
