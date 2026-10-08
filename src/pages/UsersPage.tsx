@@ -1,5 +1,5 @@
-import UserList from "@/features/users/components/UserList"
-import SelectedUser from "@/features/users/components/SelectedUser"
+import { UserList } from "@/features/users"
+import { SelectedUser } from "@/features/users"
 
 function UsersPage() {
   return (
