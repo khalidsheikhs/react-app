@@ -17,13 +17,13 @@ export const SIDEBAR_ITEMS: MenuItem[] = [
   },
   {
     item: "Content",
-    path: "/posts",
+    path: "/",
     icon: FileText,
     children: [
-      { item: "Posts", path: "/content/posts" },
-      { item: "Add Post", path: "/content/add" },
-      { item: "Categories", path: "/content/categories" },
-      { item: "Tags", path: "/content/tags" },
+      { item: "Posts", path: "/posts" },
+      { item: "Add Post", path: "/posts/add" },
+      { item: "Categories", path: "/categories" },
+      { item: "Tags", path: "/tags" },
     ],
   },
   {
@@ -33,16 +33,16 @@ export const SIDEBAR_ITEMS: MenuItem[] = [
   },
   {
     item: "Media",
-    path: "/media",
+    path: "",
     icon: Image,
     children: [
-      { item: "Library", path: "/media/library" },
+      { item: "Library", path: "/media" },
       { item: "Add Media", path: "/media/add" },
     ],
   },
   {
     item: "Pages",
-    path: "/pages",
+    path: "",
     icon: FileText,
     children: [
       { item: "All", path: "/pages" },
@@ -51,17 +51,17 @@ export const SIDEBAR_ITEMS: MenuItem[] = [
   },
   {
     item: "Users",
-    path: "/users",
+    path: "",
     icon: Users,
     children: [
       { item: "All", path: "/users" },
       { item: "Add", path: "/users/add" },
-      { item: "Profile", path: "/users/profile" },
+      { item: "Profile", path: "/profile" },
     ],
   },
   {
     item: "Settings",
-    path: "/settings",
+    path: "",
     icon: Settings,
     children: [
       { item: "General", path: "/settings/general" },
