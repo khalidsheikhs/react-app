@@ -13,6 +13,8 @@ import DashboardPage from "@/pages/DashboardPage"
 import UsersPage from "@/pages/UsersPage"
 import CategoriesPage from "@/pages/CategoriesPage"
 
+import NotFoundPage from "@/pages/notFound"
+
 const routes: RouteObject[] = [
   // Public routes
   {
@@ -59,6 +61,13 @@ const routes: RouteObject[] = [
         ],
       },
     ],
+  },
+
+
+  // 404
+  {
+    path: "*",
+    element: <NotFoundPage />,
   },
 ]
 
